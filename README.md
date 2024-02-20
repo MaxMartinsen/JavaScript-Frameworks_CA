@@ -10,3 +10,9 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Vite-plugin-inspect
+
+Inspect the intermediate state of Vite plugins. Useful for debugging and authoring plugins.
+
+- [vite-plugin-inspect@v0.7.0]https://www.npmjs.com/package/vite-plugin-inspect
