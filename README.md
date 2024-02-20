@@ -22,3 +22,11 @@ Inspect the intermediate state of Vite plugins. Useful for debugging and authori
 Prettier is an opinionated code formatter
 
 - [prettier](https://prettier.io/)
+
+## Redux Toolkit
+
+State Management: As React applications grow, managing state across components becomes increasingly complex. Redux is a popular library for managing application state in a predictable way. [@reduxjs/toolkit](https://redux-toolkit.js.org/) is the official, opinionated, batteries-included toolset for efficient Redux development. It simplifies common tasks such as store setup, creating reducers, asynchronous logic, and more.
+
+## Axios
+
+HTTP Requests: Applications often need to communicate with external services and APIs to fetch, send, or manipulate data. [axios](https://axios-http.com/docs/intro) is a promise-based HTTP client for the browser and Node.js, making it simpler to perform HTTP requests to external APIs.
