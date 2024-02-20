@@ -15,4 +15,10 @@ Currently, two official plugins are available:
 
 Inspect the intermediate state of Vite plugins. Useful for debugging and authoring plugins.
 
-- [vite-plugin-inspect@v0.7.0]https://www.npmjs.com/package/vite-plugin-inspect
+- [vite-plugin-inspect@v0.7.0](https://www.npmjs.com/package/vite-plugin-inspect)
+
+## Prettier
+
+Prettier is an opinionated code formatter
+
+- [prettier](https://prettier.io/)
