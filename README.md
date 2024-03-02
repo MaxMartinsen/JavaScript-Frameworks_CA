@@ -23,6 +23,12 @@ Prettier is an opinionated code formatter
 
 - [prettier](https://prettier.io/)
 
+## React Router
+
+Routing in React refers to navigating and linking between different pages in React.
+
+- [react-router-dom](https://reactrouter.com/en/main)
+
 ## Redux Toolkit
 
 State Management: As React applications grow, managing state across components becomes increasingly complex. Redux is a popular library for managing application state in a predictable way. [@reduxjs/toolkit](https://redux-toolkit.js.org/) is the official, opinionated, batteries-included toolset for efficient Redux development. It simplifies common tasks such as store setup, creating reducers, asynchronous logic, and more.
