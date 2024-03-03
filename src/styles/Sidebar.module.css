@@ -1,7 +1,7 @@
 .sidebar {
-  width: 304px;
+  width: 244px;
   padding: 24px;
-  height: 423px;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -12,7 +12,8 @@
 }
 
 .menu {
-  margin-top: 32px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   display: flex;
   flex-direction: column;
   row-gap: 12px;
