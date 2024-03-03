@@ -2,7 +2,7 @@ import AppRoutes from '../Routes/AppRoutes';
 
 function App() {
   return (
-    <div className="wrapper">
+    <div>
       <AppRoutes />
     </div>
   );
