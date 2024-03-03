@@ -1,8 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-
-import { getCategories } from '../../features/categories/categoriesSlice';
+import { useDispatch } from 'react-redux';
+import { fetchProducts } from '../../features/products/productsSlice';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -12,9 +11,8 @@ function Layout() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCategories);
+    dispatch(fetchProducts());
   }, [dispatch]);
-
   return (
     <div className="wrapper">
       <Header />

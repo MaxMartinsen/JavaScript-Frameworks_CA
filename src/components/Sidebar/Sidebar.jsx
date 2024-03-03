@@ -1,15 +1,27 @@
+import { useSelector } from 'react-redux';
 import styles from '../../styles/Sidebar.module.css';
 import { NavLink } from 'react-router-dom';
 
 function Sidebar() {
+  const categories = useSelector((state) => state.products.categories);
+
   return (
     <section className={styles.sidebar}>
       <div className={styles.title}>CATEGORIES</div>
       <nav>
         <ul className={styles.menu}>
-          <li>
-            <NavLink to={`/categories/${1}`}>Link</NavLink>
-          </li>
+          {categories.map((category, index) => (
+            <li key={index}>
+              <NavLink
+                className={({ isActive }) =>
+                  `${styles.link} ${isActive ? styles.active : ''}`
+                }
+                to={`/categories/${category}`}
+              >
+                {category}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </nav>
       <div className={styles.footer} target="_blank">
