@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { BASE_URL } from '../../utils/constants';
-import { tagUtils } from './../../utils/function/tagUtils';
+import { BASE_URL, ENDPOINT_ALL_PRODUCTS } from '../../utils/constants';
+import { tagUtils } from '../../utils/tagUtils';
 
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
-    const response = await fetch(`${BASE_URL}/online-shop`);
+    const response = await fetch(`${BASE_URL}${ENDPOINT_ALL_PRODUCTS}`);
     const json = await response.json();
     const uniqueCategories = tagUtils(json.data);
     return {
@@ -14,12 +14,13 @@ export const fetchProducts = createAsyncThunk(
     };
   }
 );
-
 const productsSlice = createSlice({
   name: 'products',
   initialState: {
     items: [],
     categories: [],
+    //  filtered [],
+    //  related [],
     isLoading: false,
     error: null,
   },
@@ -35,7 +36,7 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload;
       });
   },
 });

@@ -1,5 +1,13 @@
+import Poster from '../Poster/Poster';
+import Products from '../Products/Products';
+
 function Home() {
-  return <div></div>;
+  return (
+    <>
+      <Poster />
+      <Products />
+    </>
+  );
 }
 
 export default Home;

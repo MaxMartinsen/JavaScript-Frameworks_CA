@@ -82,6 +82,7 @@ li {
 section {
   background: var(--dark);
   border-radius: 6px;
+  height: 329px;
 }
 
 button {
