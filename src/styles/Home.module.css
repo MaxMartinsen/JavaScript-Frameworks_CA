@@ -89,7 +89,7 @@
 }
 
 .content {
-  color: var(--violet);
+  color: var(--green);
   font-weight: 300;
   font-size: 70px;
   line-height: 85px;
@@ -124,6 +124,6 @@
 }
 
 .discount span {
-  color: var(--violet);
+  color: var(--green);
   font-weight: 700;
 }

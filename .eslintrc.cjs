@@ -12,6 +12,7 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh','prettier'],
   rules: {
+    "react/prop-types": "off",
     'prettier/prettier': "error",
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [

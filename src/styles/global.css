@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
   color: #fff;
   font-weight: 500;
+  padding-bottom: 20px;
 }
 
 h1,
@@ -82,7 +83,6 @@ li {
 section {
   background: var(--dark);
   border-radius: 6px;
-  height: 329px;
 }
 
 button {

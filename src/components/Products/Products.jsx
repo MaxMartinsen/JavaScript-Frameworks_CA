@@ -1,37 +1,38 @@
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from '../../styles/Products.module.css';
 
-function Products() {
-  const products = useSelector((state) => state.products.items);
+function Products({ title, products, amount, style = {} }) {
+  const displayAmount = amount || products.length;
+  const list = products.slice(0, displayAmount);
 
-  // Removed undefined 'style' and 'title' references for this example
   return (
-    <section className={styles.products}>
-      {/* If you still want a title, ensure it's passed as a prop or defined somewhere */}
+    <section className={styles.products} style={style}>
+      {title && <h2>{title}</h2>}
       <div className={styles.list}>
-        {products.map((product) => (
+        {list.map((product) => (
           <Link
-            to={`/categories/${product.tags[0]}`}
+            to={`/categories/${product.tags?.[0]}`}
             key={product.id}
             className={styles.product}
           >
             <div
               className={styles.image}
-              style={{ backgroundImage: `url(${product.image.url})` }}
+              style={{ backgroundImage: `url(${product.image?.url})` }}
             ></div>
             <div className={styles.wrapper}>
               <h3 className={styles.title}>{product.title}</h3>
-            </div>
-            <div className={styles.cat}>{product.tags[0]}</div>
-            <div className={styles.info}>
-              <div className={styles.prices}>
-                <div className={styles.price}>
-                  {product.discountedPrice} Nok
+              <div className={styles.cat}>{product.tags?.[0]}</div>
+              <div className={styles.info}>
+                <div className={styles.prices}>
+                  <div className={styles.price}>
+                    {product.discountedPrice || product.price}
+                  </div>
+                  {product.discountedPrice && (
+                    <div className={styles.oldPrice}>{product.price}</div>
+                  )}
                 </div>
-                <div className={styles.oldPrice}>{product.price} Nok</div>
+                <div className={styles.purchases}>Rating: {product.rating}</div>
               </div>
-              <div className={styles.purchases}>Rating: {product.rating}</div>
             </div>
           </Link>
         ))}
