@@ -1,6 +1,7 @@
-import styles from '../../styles/Header.module.css';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../utils/routes';
+
+import styles from '../../styles/Header.module.css';
 import LOGO from '/UniqOne_logo.svg';
 import AVATAR from '../../images/avatar_icon-default.svg';
 

@@ -1,5 +1,4 @@
-import { Outlet } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchProducts } from '../../features/products/productsSlice';

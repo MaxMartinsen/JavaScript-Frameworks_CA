@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import styles from '../../styles/Products.module.css';
 
 function Products({ title, products, amount, style = {} }) {

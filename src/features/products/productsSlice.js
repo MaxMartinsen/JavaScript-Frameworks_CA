@@ -14,15 +14,23 @@ export const fetchProducts = createAsyncThunk(
     };
   }
 );
+
 const productsSlice = createSlice({
   name: 'products',
   initialState: {
     items: [],
     categories: [],
-    //  filtered [],
-    //  related [],
+    filtered: [], // Corrected syntax
     isLoading: false,
     error: null,
+  },
+  reducers: {
+    filteredByPrice: (state, action) => {
+      // Assuming you want to filter 'items' not 'list'
+      state.filtered = state.items.filter(
+        ({ price }) => price < action.payload
+      );
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -40,5 +48,7 @@ const productsSlice = createSlice({
       });
   },
 });
+
+export const { filteredByPrice } = productsSlice.actions;
 
 export default productsSlice.reducer;

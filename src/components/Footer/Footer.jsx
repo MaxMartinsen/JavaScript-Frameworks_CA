@@ -1,7 +1,8 @@
-import styles from '../../styles/Footer.module.css';
-import { ROUTES } from '../../utils/routes';
-import LOGO from '/UniqOne_logo.svg';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../../utils/routes';
+
+import LOGO from '/UniqOne_logo.svg';
+import styles from '../../styles/Footer.module.css';
 
 function Footer() {
   return (

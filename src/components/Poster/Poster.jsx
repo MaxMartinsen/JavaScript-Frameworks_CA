@@ -1,5 +1,5 @@
 import styles from '../../styles/Home.module.css';
-import BG from '../../images/bluetooth-speaker.png';
+import posterImg from '../../images/poster.png';
 
 function Poster() {
   return (
@@ -12,7 +12,7 @@ function Poster() {
           <button className={styles.button}>Shop Now</button>
         </div>
         <div className={styles.image}>
-          <img src={BG} alt="" />
+          <img src={posterImg} alt="" />
         </div>
       </div>
     </section>
