@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { BASE_URL, ENDPOINT_ALL_PRODUCTS } from '../../utils/constants';
+import { BASE_URL, ONLINE_SHOP } from '../../utils/constants';
 import { tagUtils } from '../../utils/tagUtils';
 
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
-    const response = await fetch(`${BASE_URL}${ENDPOINT_ALL_PRODUCTS}`);
+    const response = await fetch(`${BASE_URL}${ONLINE_SHOP}`);
     const json = await response.json();
     const uniqueCategories = tagUtils(json.data);
     return {

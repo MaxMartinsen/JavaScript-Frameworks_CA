@@ -3,4 +3,5 @@ export const ROUTES = {
   CART: '/cart',
   CATEGORIES: '/categories/:id',
   PRODUCTS: '/product/:id',
+  PRODUCT: '/products/:id',
 };

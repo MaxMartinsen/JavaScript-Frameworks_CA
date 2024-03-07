@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 import styles from '../../styles/Products.module.css';
 
 function Products({ title, products, amount, style = {} }) {
@@ -12,7 +11,7 @@ function Products({ title, products, amount, style = {} }) {
       <div className={styles.list}>
         {list.map((product) => (
           <Link
-            to={`/categories/${product.tags?.[0]}`}
+            to={`/products/${product.id}`}
             key={product.id}
             className={styles.product}
           >
