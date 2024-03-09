@@ -20,13 +20,12 @@ const productsSlice = createSlice({
   initialState: {
     items: [],
     categories: [],
-    filtered: [], // Corrected syntax
+    filtered: [],
     isLoading: false,
     error: null,
   },
   reducers: {
     filteredByPrice: (state, action) => {
-      // Assuming you want to filter 'items' not 'list'
       state.filtered = state.items.filter(
         ({ price }) => price < action.payload
       );

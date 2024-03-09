@@ -9,33 +9,43 @@ function Products({ title, products, amount, style = {} }) {
     <section className={styles.products} style={style}>
       {title && <h2>{title}</h2>}
       <div className={styles.list}>
-        {list.map((product) => (
-          <Link
-            to={`/products/${product.id}`}
-            key={product.id}
-            className={styles.product}
-          >
-            <div
-              className={styles.image}
-              style={{ backgroundImage: `url(${product.image?.url})` }}
-            ></div>
-            <div className={styles.wrapper}>
-              <h3 className={styles.title}>{product.title}</h3>
-              <div className={styles.cat}>{product.tags?.[0]}</div>
-              <div className={styles.info}>
-                <div className={styles.prices}>
-                  <div className={styles.price}>
-                    {product.discountedPrice || product.price}
+        {list.map((product) => {
+          const isDiscounted =
+            product.discountedPrice && product.discountedPrice < product.price;
+          return (
+            <Link
+              to={`/product/${product.id}`}
+              key={product.id}
+              className={styles.product}
+            >
+              <div
+                className={styles.image}
+                style={{ backgroundImage: `url(${product.image?.url})` }}
+              ></div>
+              <div className={styles.wrapper}>
+                <h3 className={styles.title}>{product.title}</h3>
+                <div className={styles.cat}>{product.tags?.[0]}</div>
+                <div className={styles.info}>
+                  <div className={styles.prices}>
+                    {isDiscounted ? (
+                      <>
+                        <div className={styles.price}>
+                          {product.discountedPrice}
+                        </div>
+                        <div className={styles.oldPrice}>{product.price}</div>
+                      </>
+                    ) : (
+                      <div className={styles.price}>{product.price}</div>
+                    )}
                   </div>
-                  {product.discountedPrice && (
-                    <div className={styles.oldPrice}>{product.price}</div>
-                  )}
+                  <div className={styles.purchases}>
+                    Rating: {product.rating}
+                  </div>
                 </div>
-                <div className={styles.purchases}>Rating: {product.rating}</div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
     </section>
   );

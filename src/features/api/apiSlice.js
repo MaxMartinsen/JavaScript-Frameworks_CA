@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { BASE_URL } from '../../utils/constants';
+import { BASE_URL, ONLINE_SHOP } from '../../utils/constants';
 
 export const apiSlice = createApi({
   reducerPath: 'api',
@@ -7,7 +7,8 @@ export const apiSlice = createApi({
   tagTypes: ['Product'],
   endpoints: (builder) => ({
     getProduct: builder.query({
-      query: (id) => (id ? `online-shop/${id}` : null),
+      query: ({ id }) => (id ? `${ONLINE_SHOP}/${id}` : null),
+      providesTags: ['Product'],
     }),
   }),
 });
