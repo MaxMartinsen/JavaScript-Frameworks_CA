@@ -4,8 +4,16 @@ import { ROUTES } from '../../utils/routes';
 import styles from '../../styles/Header.module.css';
 import LOGO from '/UniqOne_logo.svg';
 import AVATAR from '../../images/avatar_icon-default.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleForm } from '../../features/user/userSlice';
 
 function Header() {
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector(({ user }) => user);
+  const handleClick = () => {
+    if (!currentUser) dispatch(toggleForm(true));
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -15,7 +23,7 @@ function Header() {
       </div>
 
       <div className={styles.info}>
-        <div className={styles.user}>
+        <div className={styles.user} onClick={handleClick}>
           <div
             className={styles.avatar}
             style={{ backgroundImage: `url(${AVATAR})` }}

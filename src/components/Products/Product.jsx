@@ -1,16 +1,19 @@
-import styles from '../../styles/Product.module.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import { ROUTES } from '../../utils/routes';
 
-function Product({
-  title,
-  price,
-  discountedPrice,
-  image,
-  description,
-  rating,
-}) {
+import { addItemToCart } from '../../features/user/userSlice';
+
+import styles from '../../styles/Product.module.css';
+
+function Product(item) {
+  const { title, price, discountedPrice, image, description, rating } = item;
+  const dispatch = useDispatch();
   const isDiscounted = discountedPrice && discountedPrice < price;
+  const addToCart = () => {
+    dispatch(addItemToCart(item));
+  };
   return (
     <section className={styles.product}>
       <div className={styles.images}>
@@ -36,7 +39,9 @@ function Product({
         <p className={styles.description}>{description}</p>
 
         <div className={styles.actions}>
-          <button className={styles.add}>Add to cart</button>
+          <button onClick={addToCart} className={styles.add}>
+            Add to cart
+          </button>
           <button className={styles.favourite}>Add to Favourites</button>
         </div>
         <div className={styles.bottom}>
