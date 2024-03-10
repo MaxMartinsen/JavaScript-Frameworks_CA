@@ -1,4 +1,3 @@
-// src/features/products/productsSlice.js
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { BASE_URL, ONLINE_SHOP } from '../../utils/constants';
 import { tagUtils } from '../../utils/tagUtils';
@@ -16,7 +15,6 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
-// New action for fetching related products
 export const fetchRelatedProducts = createAsyncThunk(
   'products/fetchRelated',
   async (currentTags, { getState }) => {

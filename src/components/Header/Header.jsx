@@ -6,10 +6,23 @@ import LOGO from '/UniqOne_logo.svg';
 import AVATAR from '../../images/avatar_icon-default.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleForm } from '../../features/user/userSlice';
+import { useEffect, useState } from 'react';
 
 function Header() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector(({ user }) => user);
+
+  const [values, setValues] = useState({ name: 'Guest', avatar: AVATAR });
+
+  useEffect(() => {
+    if (currentUser && currentUser.avatar && currentUser.avatar.url) {
+      setValues({
+        name: currentUser.name || 'Guest',
+        avatar: currentUser.avatar.url, // Correctly reference the avatar URL
+      });
+    }
+  }, [currentUser]);
+
   const handleClick = () => {
     if (!currentUser) dispatch(toggleForm(true));
   };
@@ -26,9 +39,9 @@ function Header() {
         <div className={styles.user} onClick={handleClick}>
           <div
             className={styles.avatar}
-            style={{ backgroundImage: `url(${AVATAR})` }}
+            style={{ backgroundImage: `url(${values.avatar})` }}
           ></div>
-          <div className={styles.username}>Guest</div>
+          <div className={styles.username}>{values.name}</div>
         </div>
         <form className={styles.form}>
           <div className={styles.icon}>
