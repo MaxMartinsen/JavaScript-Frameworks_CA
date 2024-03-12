@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import styles from '../../styles/Sidebar.module.css';
 import { NavLink } from 'react-router-dom';
+import { ROUTES } from '../../utils/routes';
 
 function Sidebar() {
   const categories = useSelector((state) => state.products.categories);
@@ -25,9 +26,9 @@ function Sidebar() {
         </ul>
       </nav>
       <div className={styles.footer} target="_blank">
-        <a href="/help" className={styles.link}>
-          Help
-        </a>
+        <NavLink to={ROUTES.CONTACT} className={styles.link}>
+          Contact
+        </NavLink>
         <a
           href="/help"
           className={styles.link}
