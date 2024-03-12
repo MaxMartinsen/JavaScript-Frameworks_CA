@@ -18,7 +18,7 @@ function Header() {
     if (currentUser && currentUser.avatar && currentUser.avatar.url) {
       setValues({
         name: currentUser.name || 'Guest',
-        avatar: currentUser.avatar.url, // Correctly reference the avatar URL
+        avatar: currentUser.avatar.url,
       });
     }
   }, [currentUser]);

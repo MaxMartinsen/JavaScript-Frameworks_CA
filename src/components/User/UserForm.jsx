@@ -2,20 +2,29 @@ import { useSelector, useDispatch } from 'react-redux';
 import UserRegisterForm from './UserRegisterForm';
 
 import styles from '../../styles/User.module.css';
-import { toggleForm } from '../../features/user/userSlice';
+import { toggleForm, toggleFormType } from '../../features/user/userSlice';
+import UserLoginForm from './UserLoginForm';
 
 const UserForm = () => {
   const dispatch = useDispatch();
-  const { showForm } = useSelector(({ user }) => user);
+  const { showForm, formType } = useSelector(({ user }) => user);
 
   const closeForm = () => dispatch(toggleForm(false));
+  const changeFormType = (type) => dispatch(toggleFormType(type));
   return showForm ? (
     <>
       <div
         className={styles.overlay}
         onClick={() => dispatch(toggleForm(false))}
       ></div>
-      <UserRegisterForm closeForm={closeForm} />
+      {formType === 'signup' ? (
+        <UserRegisterForm
+          changeFormType={changeFormType}
+          closeForm={closeForm}
+        />
+      ) : (
+        <UserLoginForm changeFormType={changeFormType} closeForm={closeForm} />
+      )}
     </>
   ) : (
     <></>

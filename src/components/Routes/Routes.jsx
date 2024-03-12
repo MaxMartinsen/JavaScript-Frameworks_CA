@@ -1,7 +1,9 @@
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+
+import { ROUTES } from '../../utils/routes';
+
 import Home from '../Home/Home';
 import SingleProduct from '../Products/SingleProduct';
-import { ROUTES } from '../../utils/routes';
 
 const AppRoutes = () => {
   return (
