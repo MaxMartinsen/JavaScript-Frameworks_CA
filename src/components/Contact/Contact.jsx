@@ -32,7 +32,7 @@ function Contact() {
   };
 
   return (
-    <div className={styles.contact}>
+    <section className={styles.contact}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.group}>
           <input
@@ -86,7 +86,7 @@ function Contact() {
           Submit
         </button>
       </form>
-    </div>
+    </section>
   );
 }
 
