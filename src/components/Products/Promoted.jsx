@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import styles from '../../styles/Categories.module.css';
+import styles from '../../styles/Promoted.module.css';
 
-function Categories({ title, products, amount }) {
+function Promoted({ title, products, amount }) {
   const displayAmount = amount || products.length;
   const list = products.slice(0, displayAmount);
   return (
@@ -9,7 +9,7 @@ function Categories({ title, products, amount }) {
       <h2>{title}</h2>
       <div className={styles.list}>
         {list.map(({ id, title, image }) => (
-          <Link to={`/categories/${id}`} key={id} className={styles.item}>
+          <Link to={`/product/${id}`} key={id} className={styles.item}>
             <div
               className={styles.image}
               style={{ backgroundImage: `url(${image?.url})` }}
@@ -22,4 +22,4 @@ function Categories({ title, products, amount }) {
   );
 }
 
-export default Categories;
+export default Promoted;
