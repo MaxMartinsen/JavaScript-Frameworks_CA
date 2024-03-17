@@ -1,0 +1,25 @@
+import styles from '../../styles/Home.module.css';
+import bannerImg from '../../images/banner.png';
+
+function Banner() {
+  return (
+    <section className={styles.banner}>
+      <div className={styles.left}>
+        <p className={styles.content}>
+          Happy Easter<span>SALE</span>
+        </p>
+        <button className={styles.more}>See more</button>
+      </div>
+      <div
+        className={styles.right}
+        style={{ backgroundImage: `url(${bannerImg})` }}
+      >
+        <p className={styles.discount}>
+          save up to <span>50%</span>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+export default Banner;
