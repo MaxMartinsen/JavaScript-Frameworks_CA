@@ -26,7 +26,12 @@ function Sidebar() {
         </ul>
       </nav>
       <div className={styles.footer} target="_blank">
-        <NavLink to={ROUTES.CONTACT} className={styles.link}>
+        <NavLink
+          to={ROUTES.CONTACT}
+          className={({ isActive }) =>
+            `${styles.link} ${isActive ? styles.active : ''}`
+          }
+        >
           Contact
         </NavLink>
         <a

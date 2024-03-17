@@ -13,7 +13,9 @@ export const tagUtils = (products) => {
     gaming: 'electronics',
     computers: 'electronics',
     wearables: 'electronics',
-    watch: 'electronics',
+    watches: 'watch',
+    watch: 'watch',
+    accessories: 'accessories',
     headphones: 'electronics',
   };
 
