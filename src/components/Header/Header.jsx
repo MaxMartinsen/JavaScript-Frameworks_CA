@@ -3,7 +3,7 @@ import { ROUTES } from '../../utils/routes';
 
 import styles from '../../styles/Header.module.css';
 import LOGO from '/UniqOne_logo.svg';
-import AVATAR from '../../images/avatar-default-symbolic.svg';
+import AVATAR from '/avatar-default-symbolic.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleForm } from '../../features/user/userSlice';
 import { useEffect, useState } from 'react';
