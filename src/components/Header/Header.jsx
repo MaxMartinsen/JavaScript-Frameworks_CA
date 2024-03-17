@@ -7,12 +7,16 @@ import AVATAR from '../../images/avatar_icon-default.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleForm } from '../../features/user/userSlice';
 import { useEffect, useState } from 'react';
+import { useGetProductsQuery } from '../../features/api/apiSlice';
 
 function Header() {
   const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState('');
   const { currentUser } = useSelector(({ user }) => user);
 
   const [values, setValues] = useState({ name: 'Guest', avatar: AVATAR });
+
+  const { data: products, isLoading } = useGetProductsQuery();
 
   useEffect(() => {
     if (currentUser && currentUser.avatar && currentUser.avatar.url) {
@@ -27,6 +31,14 @@ function Header() {
     if (!currentUser) dispatch(toggleForm(true));
   };
 
+  const handleSearch = (event) => {
+    setSearchValue(event.target.value);
+  };
+  const filteredProducts = searchValue
+    ? products?.data?.filter((product) =>
+        product.title.toLowerCase().includes(searchValue.toLowerCase())
+      )
+    : [];
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -53,13 +65,34 @@ function Header() {
             <input
               type="search"
               name="search"
-              placeholder="Search for anyting..."
+              placeholder="Search for anything..."
               autoComplete="off"
-              onChange={() => {}}
-              value=""
+              onChange={handleSearch}
+              value={searchValue}
             />
           </div>
-          {false && <div className={styles.box}></div>}
+          {searchValue && (
+            <div className={styles.box}>
+              {isLoading
+                ? 'Loading...'
+                : filteredProducts.length === 0
+                  ? 'No results.'
+                  : filteredProducts.map(({ title, image, id }) => (
+                      <Link
+                        to={`/product/${id}`}
+                        key={id}
+                        className={styles.item}
+                        onClick={() => setSearchValue('')}
+                      >
+                        <div
+                          className={styles.image}
+                          style={{ backgroundImage: `url(${image.url})` }}
+                        ></div>
+                        <div className={styles.title}>{title}</div>
+                      </Link>
+                    ))}
+            </div>
+          )}
         </form>
         <div className={styles.account}>
           <Link to={ROUTES.HOME} className={styles.favourites}>
