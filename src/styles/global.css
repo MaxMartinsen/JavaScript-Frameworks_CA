@@ -8,7 +8,6 @@ body {
   overflow-x: hidden;
   color: #fff;
   font-weight: 500;
-  padding-bottom: 20px;
 }
 
 h1,
@@ -56,8 +55,12 @@ li {
 }
 
 .app {
-  width: 1274px;
+  max-width: 1176px;
   margin: 0 auto;
+  padding: 0px 15px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .flex {

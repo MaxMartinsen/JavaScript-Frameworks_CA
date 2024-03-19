@@ -1,8 +1,10 @@
 .cart {
+  flex-grow: 1;
   width: calc(100% - 324px);
   padding: 24px 32px;
   display: flex;
   flex-direction: column;
+  max-height: 423px;
 }
 
 .empty {

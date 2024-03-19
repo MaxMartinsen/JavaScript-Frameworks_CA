@@ -1,8 +1,12 @@
-.footer {
+.footer{
+  margin-top: auto;
+}
+
+.content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin: 20px 0px;
   padding: 24px;
   background: var(--dark);
   border-radius: 6px;

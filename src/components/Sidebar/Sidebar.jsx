@@ -34,13 +34,6 @@ function Sidebar() {
         >
           Contact
         </NavLink>
-        <a
-          href="/help"
-          className={styles.link}
-          style={{ textDecoration: 'underline' }}
-        >
-          Terms & Conditions
-        </a>
       </div>
     </section>
   );
