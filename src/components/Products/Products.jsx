@@ -25,21 +25,19 @@ function Products({ title, products, amount, style = {} }) {
               <div className={styles.wrapper}>
                 <h3 className={styles.title}>{product.title}</h3>
                 <div className={styles.cat}>{product.tags?.[0]}</div>
+                <div className={styles.purchases}>Rating: {product.rating}</div>
                 <div className={styles.info}>
                   <div className={styles.prices}>
                     {isDiscounted ? (
                       <>
                         <div className={styles.price}>
-                          {product.discountedPrice}
+                          {product.discountedPrice} Nok
                         </div>
                         <div className={styles.oldPrice}>{product.price}</div>
                       </>
                     ) : (
-                      <div className={styles.price}>{product.price}</div>
+                      <div className={styles.price}>{product.price} Nok</div>
                     )}
-                  </div>
-                  <div className={styles.purchases}>
-                    Rating: {product.rating}
                   </div>
                 </div>
               </div>

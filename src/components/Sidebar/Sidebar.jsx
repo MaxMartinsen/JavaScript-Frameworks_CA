@@ -12,7 +12,7 @@ function Sidebar() {
       <nav>
         <ul className={styles.menu}>
           {categories.map((category, index) => (
-            <li key={index}>
+            <li className={styles.link} key={index}>
               <NavLink
                 className={({ isActive }) =>
                   `${styles.link} ${isActive ? styles.active : ''}`
@@ -34,13 +34,6 @@ function Sidebar() {
         >
           Contact
         </NavLink>
-        <a
-          href="/help"
-          className={styles.link}
-          style={{ textDecoration: 'underline' }}
-        >
-          Terms & Conditions
-        </a>
       </div>
     </section>
   );

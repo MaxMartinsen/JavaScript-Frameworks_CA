@@ -35,7 +35,7 @@ function SingleProduct() {
   return response?.data ? (
     <>
       <Product {...response.data} />
-      <Products products={related} amount={5} title="Related Products" />
+      <Products products={related} amount={4} title="Related Products" />
     </>
   ) : (
     <div>Product not found</div>

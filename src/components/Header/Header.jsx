@@ -95,12 +95,6 @@ function Header() {
           )}
         </form>
         <div className={styles.account}>
-          <Link to={ROUTES.HOME} className={styles.favourites}>
-            <svg className={styles['icon-fav']}>
-              <use xlinkHref={`/sprite.svg#heart`} />
-            </svg>
-          </Link>
-
           <Link to={ROUTES.CART} className={styles.cart}>
             <svg className={styles['icon-cart']}>
               <use xlinkHref={`/sprite.svg#bag`} />

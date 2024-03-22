@@ -1,0 +1,58 @@
+.poster{
+  position: relative;
+  flex-grow: 1;
+  width: calc(100% - 324px);
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  max-height: 423px;
+}
+
+.text{
+  margin-right: 100px;
+}
+
+.title {
+  font-weight: 900;
+  line-height: 100px;
+  text-transform: uppercase;
+  color: var(--bg);
+  text-align: center;
+}
+
+.product {
+  position: relative;
+  padding-left: 12px;
+  display: flex;
+  align-items: stretch;
+  margin-top: 9px;
+}
+
+.subtitle {
+  line-height: 20px;
+  text-transform: uppercase;
+  color: var(--sea);
+}
+
+.head {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 51px;
+  text-transform: uppercase;
+  color: var(--light);
+  max-width: 500px;
+  margin: 10px 0 24px 0;
+}
+
+.image {
+  position: relative;
+  flex-grow: 1;
+  height: 250px;
+}
+
+.image img {
+  position: absolute;
+  bottom: -57%;
+  right: -16%;
+  max-width: unset;
+}

@@ -31,10 +31,10 @@ function Home() {
   return (
     <>
       <Poster />
-      <Products title="Trending" products={trendingProducts} amount={5} />
+      <Products title="Trending" products={trendingProducts} amount={4} />
       <Promoted title="Worth seeing" products={promotedProducts} amount={5} />
       <Banner />
-      <Products title="Less than 1000 Nok" products={filtered} amount={5} />
+      <Products title="Less than 1000 Nok" products={filtered} amount={4} />
     </>
   );
 }
