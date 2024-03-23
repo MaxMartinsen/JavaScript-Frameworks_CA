@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import styles from '../../styles/User.module.css';
 import { useDispatch } from 'react-redux';
+
 import { createUser } from '../../features/user/userSlice';
+
+import styles from '../../styles/User.module.css';
 
 function UserRegisterForm({ closeForm, changeFormType }) {
   const dispatch = useDispatch();

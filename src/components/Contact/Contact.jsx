@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from '../../styles/Contact.module.css';
 import { useSelector } from 'react-redux';
+
+import styles from '../../styles/Contact.module.css';
 
 function Contact() {
   const currentUser = useSelector((state) => state.user.currentUser);

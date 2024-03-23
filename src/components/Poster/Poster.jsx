@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '../../styles/Poster.module.css';
+
 import posterImg from '../../images/poster.png';
+
+import styles from '../../styles/Poster.module.css';
 
 function Poster() {
   const navigate = useNavigate();

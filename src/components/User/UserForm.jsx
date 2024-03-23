@@ -1,9 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
+
 import UserRegisterForm from './UserRegisterForm';
+import UserLoginForm from './UserLoginForm';
+
+import { toggleForm, toggleFormType } from '../../features/user/userSlice';
 
 import styles from '../../styles/User.module.css';
-import { toggleForm, toggleFormType } from '../../features/user/userSlice';
-import UserLoginForm from './UserLoginForm';
 
 const UserForm = () => {
   const dispatch = useDispatch();
