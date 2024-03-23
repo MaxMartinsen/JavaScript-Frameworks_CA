@@ -52,7 +52,55 @@
 
 .image img {
   position: absolute;
-  bottom: -57%;
+  bottom: -61%;
   right: -16%;
   max-width: unset;
+}
+/* SCREEN */
+@media (min-width: 991.99px) {
+  
+}
+/* TABLET */
+@media (max-width: 991.98px) {
+ .poster {
+  order: -1;
+ }
+}
+/* MOBILE */
+@media (max-width: 767.98px) {
+  .image img {
+    max-width: 350px;
+    bottom: -42%;
+    right: -16%;
+  }
+  .text{
+    margin-right: 0px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 567.98px) {
+  .poster {
+    max-height: fit-content;
+  }
+  .image img {
+    max-width: 250px;
+    bottom: -37%;
+    right: -58%;
+  }
+  .subtitle {
+    line-height: 20px;
+    text-transform: uppercase;
+    color: var(--sea);
+  }
+  .title {
+    line-height: 53px;
+
+  }
+  
+  .head {
+    font-size: 28px;
+    line-height: 38px;
+    margin: 2px 0 1px 0;
+  }
 }
