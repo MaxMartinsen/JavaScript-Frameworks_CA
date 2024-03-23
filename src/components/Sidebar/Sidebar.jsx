@@ -11,6 +11,16 @@ function Sidebar() {
       <div className={styles.title}>CATEGORIES</div>
       <nav>
         <ul className={styles.menu}>
+          <li className={styles.link}>
+            <NavLink
+              className={({ isActive }) =>
+                `${styles.link} ${isActive ? styles.active : ''}`
+              }
+              to={`/categories/all`}
+            >
+              All
+            </NavLink>
+          </li>
           {categories.map((category, index) => (
             <li className={styles.link} key={index}>
               <NavLink
