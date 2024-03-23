@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from '../../styles/Contact.module.css';
 import { useSelector } from 'react-redux';
+
+import styles from '../../styles/Contact.module.css';
 
 function Contact() {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -33,6 +34,7 @@ function Contact() {
 
   return (
     <section className={styles.contact}>
+      <h1 className={styles.title}>Contact</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.group}>
           <input

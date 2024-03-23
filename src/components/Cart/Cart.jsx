@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import styles from '../../styles/Cart.module.css';
+
 import { sumBy } from '../../utils/sumBy';
 import {
   addItemToCart,
   removeItemFromCart,
 } from '../../features/user/userSlice';
+
+import styles from '../../styles/Cart.module.css';
 
 function Cart() {
   const dispatch = useDispatch();

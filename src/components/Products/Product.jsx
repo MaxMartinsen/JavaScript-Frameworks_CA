@@ -42,7 +42,6 @@ function Product(item) {
           <button onClick={addToCart} className={styles.add}>
             Add to cart
           </button>
-          <button className={styles.favourite}>Add to Favourites</button>
         </div>
         <div className={styles.bottom}>
           <div className={styles.purchase}>Rating: {rating}</div>

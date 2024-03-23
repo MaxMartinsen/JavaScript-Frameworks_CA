@@ -12,12 +12,17 @@ function SingleCategory() {
   const { category } = useParams();
   const products = useSelector((state) => state.products.items);
 
-  const filteredProducts = products.filter(
-    (product) =>
-      product.tags.includes(category) || product.category === category
-  );
+  let filteredProducts = products;
 
-  const title = capitalizeFirstLetter(category);
+  if (category.toLowerCase() !== 'all') {
+    filteredProducts = products.filter(
+      (product) =>
+        product.tags.includes(category) || product.category === category
+    );
+  }
+
+  const title =
+    category === 'all' ? 'All Products' : capitalizeFirstLetter(category);
 
   return (
     <>

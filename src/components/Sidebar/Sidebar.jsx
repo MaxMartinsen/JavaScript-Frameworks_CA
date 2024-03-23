@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux';
-import styles from '../../styles/Sidebar.module.css';
 import { NavLink } from 'react-router-dom';
+
 import { ROUTES } from '../../utils/routes';
+
+import styles from '../../styles/Sidebar.module.css';
 
 function Sidebar() {
   const categories = useSelector((state) => state.products.categories);
@@ -11,8 +13,18 @@ function Sidebar() {
       <div className={styles.title}>CATEGORIES</div>
       <nav>
         <ul className={styles.menu}>
+          <li className={styles.link}>
+            <NavLink
+              className={({ isActive }) =>
+                `${styles.link} ${isActive ? styles.active : ''}`
+              }
+              to={`/categories/all`}
+            >
+              All
+            </NavLink>
+          </li>
           {categories.map((category, index) => (
-            <li key={index}>
+            <li className={styles.link} key={index}>
               <NavLink
                 className={({ isActive }) =>
                   `${styles.link} ${isActive ? styles.active : ''}`
@@ -34,13 +46,6 @@ function Sidebar() {
         >
           Contact
         </NavLink>
-        <a
-          href="/help"
-          className={styles.link}
-          style={{ textDecoration: 'underline' }}
-        >
-          Terms & Conditions
-        </a>
       </div>
     </section>
   );
