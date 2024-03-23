@@ -4,6 +4,7 @@
   padding: 24px;
   column-gap: 32px;
   color: var(--light);
+  width: calc(100% - 324px);
 }
 
 .info {
@@ -144,4 +145,31 @@
 .add:disabled {
   cursor: not-allowed;
   background: var(--bg);
+}
+/* SCREEN */
+@media (min-width: 991.99px) {
+  
+}
+/* TABLET */
+@media (max-width: 991.98px) {
+ .product {
+  order: -1;
+ }
+}
+/* MOBILE */
+@media (max-width: 767.98px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info {
+    margin-top: 24px;
+  }
+  .bottom {
+    margin-top: 24px;
+  }
+  .current {
+    width: 275px;
+    height: 275px;
+  }
 }
