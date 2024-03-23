@@ -90,12 +90,13 @@
   margin-top: 24px;
   text-align: center;
 }
+.more {
+  margin: 32px auto 0 auto;
+  text-align: center;
+}
 
 /* SCREEN */
 @media (min-width: 991.99px) {
-  .product:nth-child(5n) {
-    width: calc(100% / 5);
-  }
   .product {
     width: calc(100% / 4 - 20px);
   }

@@ -7,6 +7,7 @@ import { fetchRelatedProducts } from '../../features/products/productsSlice';
 
 import Product from './Product';
 import Products from './Products';
+
 import { ROUTES } from '../../utils/routes';
 
 function SingleProduct() {

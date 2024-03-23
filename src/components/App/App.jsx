@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { fetchProducts } from '../../features/products/productsSlice';
 import AppRoutes from '../Routes/Routes';
 
