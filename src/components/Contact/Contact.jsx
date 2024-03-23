@@ -33,6 +33,7 @@ function Contact() {
 
   return (
     <section className={styles.contact}>
+      <h1 className={styles.title}>Contact</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.group}>
           <input

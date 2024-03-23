@@ -1,4 +1,4 @@
-import styles from '../../styles/Home.module.css';
+import styles from '../../styles/Banner.module.css';
 import bannerImg from '../../images/banner.png';
 
 function Banner() {

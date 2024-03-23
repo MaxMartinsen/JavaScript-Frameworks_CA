@@ -8,7 +8,6 @@ import { fetchRelatedProducts } from '../../features/products/productsSlice';
 import Product from './Product';
 import Products from './Products';
 import { ROUTES } from '../../utils/routes';
-import styles from '../../styles/Loader.module.css';
 
 function SingleProduct() {
   const { id } = useParams();
@@ -30,7 +29,7 @@ function SingleProduct() {
     }
   }, [dispatch, response?.data]);
 
-  if (isLoading) return <div className={styles.loader}></div>;
+  if (isLoading) return <div>Loader ...</div>;
 
   return response?.data ? (
     <>

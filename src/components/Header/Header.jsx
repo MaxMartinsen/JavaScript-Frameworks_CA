@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { ROUTES } from '../../utils/routes';
 
-import styles from '../../styles/Header.module.css';
 import LOGO from '/UniqOne_logo.svg';
 import AVATAR from '/avatar-default-symbolic.svg';
-import { useDispatch, useSelector } from 'react-redux';
+
 import { toggleForm } from '../../features/user/userSlice';
-import { useEffect, useState } from 'react';
 import { useGetProductsQuery } from '../../features/api/apiSlice';
+
+import styles from '../../styles/Header.module.css';
 
 function Header() {
   const dispatch = useDispatch();
@@ -48,13 +51,6 @@ function Header() {
       </div>
 
       <div className={styles.info}>
-        <div className={styles.user} onClick={handleClick}>
-          <div
-            className={styles.avatar}
-            style={{ backgroundImage: `url(${values.avatar})` }}
-          ></div>
-          <div className={styles.username}>{values.name}</div>
-        </div>
         <form className={styles.form}>
           <div className={styles.icon}>
             <svg className="icon">
@@ -94,6 +90,16 @@ function Header() {
             </div>
           )}
         </form>
+      </div>
+
+      <div className={styles.menu}>
+        <div className={styles.user} onClick={handleClick}>
+          <div className={styles.username}>{values.name}</div>
+          <div
+            className={styles.avatar}
+            style={{ backgroundImage: `url(${values.avatar})` }}
+          ></div>
+        </div>
         <div className={styles.account}>
           <Link to={ROUTES.CART} className={styles.cart}>
             <svg className={styles['icon-cart']}>
