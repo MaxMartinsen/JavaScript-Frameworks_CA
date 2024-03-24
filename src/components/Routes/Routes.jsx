@@ -7,6 +7,7 @@ import Contact from '../Contact/Contact';
 import SingleProduct from '../Products/SingleProduct';
 import SingleCategory from '../Categories/SingleCategory';
 import Cart from '../Cart/Cart';
+import CheckoutSuccess from '../Checkout/CheckoutSuccess';
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path={ROUTES.CONTACT} element={<Contact />} />
         <Route path={ROUTES.CATEGORIES} element={<SingleCategory />} />
         <Route path={ROUTES.CART} element={<Cart />} />
+        <Route path={ROUTES.CHECKOUT_SUCCESS} element={<CheckoutSuccess />} />
       </Route>
     </Routes>
   );
