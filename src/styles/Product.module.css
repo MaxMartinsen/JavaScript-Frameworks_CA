@@ -107,7 +107,7 @@
 
 .size:hover,
 .size.active {
-  background: var(--violet);
+  background: var(--green);
 }
 
 .description {
@@ -123,22 +123,13 @@
   column-gap: 10px;
 }
 
-.favourite {
-  background: var(--dark-sea);
-  border-radius: 6px;
-}
-
-.favourite:hover {
-  background: #7a8690;
-}
-
 .bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 10px;
   line-height: 12px;
-  color: var(--dark-sea);
+  color: var(--grey);
   margin-top: auto;
 }
 

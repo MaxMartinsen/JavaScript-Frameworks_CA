@@ -21,25 +21,21 @@ function Poster() {
       const maxPosterWidth = 1600;
       const minFontSize = 44;
       const maxFontSize = 200;
-      let newFontSize;
 
-      if (posterWidth <= minPosterWidth) {
-        newFontSize = minFontSize;
-      } else if (posterWidth >= maxPosterWidth) {
-        newFontSize = maxFontSize;
-      } else {
-        newFontSize =
-          minFontSize +
-          (maxFontSize - minFontSize) *
-            ((posterWidth - minPosterWidth) /
-              (maxPosterWidth - minPosterWidth));
-      }
+      const clampedPosterWidth = Math.min(
+        Math.max(posterWidth, minPosterWidth),
+        maxPosterWidth
+      );
+      const scale =
+        (clampedPosterWidth - minPosterWidth) /
+        (maxPosterWidth - minPosterWidth);
+
+      const newFontSize = minFontSize + (maxFontSize - minFontSize) * scale;
 
       setFontSize(`${newFontSize}px`);
     };
 
     adjustFontSize();
-
     window.addEventListener('resize', adjustFontSize);
 
     return () => window.removeEventListener('resize', adjustFontSize);

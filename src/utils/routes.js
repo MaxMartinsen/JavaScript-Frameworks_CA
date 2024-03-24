@@ -5,4 +5,5 @@ export const ROUTES = {
   PRODUCTS: '/products/:id',
   PRODUCT: '/product/:id',
   CONTACT: '/contact',
+  CHECKOUT_SUCCESS: '/checkout-success',
 };
