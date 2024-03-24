@@ -73,11 +73,11 @@
   font-size: 13px;
   line-height: 16px;
   text-decoration-line: line-through;
-  color: var(--dark-sea);
+  color: var(--grey);
 }
 
 .purchases {
-  color: var(--dark-sea);
+  color: var(--grey);
   font-weight: 500;
   font-size: 10px;
   line-height: 12px;

@@ -1,16 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+import { ROUTES } from '../../utils/routes';
 
 import { sumBy } from '../../utils/sumBy';
 import {
   addItemToCart,
   removeItemFromCart,
+  clearCart,
+  toggleForm,
 } from '../../features/user/userSlice';
 
 import styles from '../../styles/Cart.module.css';
 
 function Cart() {
   const dispatch = useDispatch();
-  const { cart } = useSelector(({ user }) => user);
+  const navigate = useNavigate();
+  const { cart, currentUser } = useSelector(({ user }) => user);
   const changeQuantity = (item, quantity) => {
     dispatch(addItemToCart({ ...item, quantity }));
   };
@@ -18,6 +24,16 @@ function Cart() {
   const removeItem = (id) => {
     dispatch(removeItemFromCart(id));
   };
+
+  const handleCheckout = () => {
+    currentUser ? proceedWithCheckout() : dispatch(toggleForm(true));
+  };
+
+  const proceedWithCheckout = () => {
+    dispatch(clearCart());
+    navigate(ROUTES.CHECKOUT_SUCCESS);
+  };
+
   return (
     <section className={styles.cart}>
       <h2 className={styles.title}>Your cart</h2>
@@ -100,7 +116,9 @@ function Cart() {
                 Nok
               </span>
             </div>
-            <button className={styles.proceed}>Proceed to checkout</button>
+            <button className={styles.proceed} onClick={handleCheckout}>
+              Proceed to checkout
+            </button>
           </div>
         </>
       )}
