@@ -63,7 +63,7 @@
 }
 
 .close:hover svg {
-  stroke: #fff;
+  stroke: var(--white);
 }
 
 .link {
