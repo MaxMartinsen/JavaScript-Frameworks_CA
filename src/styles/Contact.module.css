@@ -1,6 +1,8 @@
 .contact {
   flex-grow: 1;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -39,6 +41,17 @@
 .submit {
   margin-top: 24px;
   max-width: 300px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.error {
+  font-size: 14px;
+  color: var(--red);
 }
 
 /* SCREEN */
