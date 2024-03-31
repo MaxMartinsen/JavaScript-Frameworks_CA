@@ -6,6 +6,7 @@ import { useGetProductQuery } from '../../features/api/apiSlice';
 import { fetchRelatedProducts } from '../../features/products/productsSlice';
 
 import Product from './Product';
+import Reviews from '../Reviews/Reviews';
 import Products from './Products';
 
 import { ROUTES } from '../../utils/routes';
@@ -35,6 +36,7 @@ function SingleProduct() {
   return response?.data ? (
     <>
       <Product {...response.data} />
+      <Reviews reviews={response.data.reviews} />
       <Products products={related} amount={4} title="Related Products" />
     </>
   ) : (
