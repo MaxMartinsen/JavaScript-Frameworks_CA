@@ -11,12 +11,19 @@ function Product(item) {
   const { title, price, discountedPrice, image, description, rating } = item;
   const dispatch = useDispatch();
   const isDiscounted = discountedPrice && discountedPrice < price;
+  const discountPercentage = isDiscounted
+    ? Math.round(((price - discountedPrice) / price) * 100)
+    : 0;
   const addToCart = () => {
     dispatch(addItemToCart(item));
   };
+
   return (
     <section className={styles.product}>
       <div className={styles.images}>
+        {isDiscounted && (
+          <span className={styles.sale}>-{discountPercentage}%</span>
+        )}
         <div
           className={styles.current}
           style={{
