@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../utils/routes';
 
 import { validateLength } from '../../utils/validateLength';
@@ -10,6 +10,7 @@ import styles from '../../styles/Contact.module.css';
 
 function Contact() {
   const currentUser = useSelector((state) => state.user.currentUser);
+  const navigate = useNavigate();
 
   const [values, setValues] = useState({
     name: '',
@@ -30,6 +31,12 @@ function Contact() {
       }));
     }
   }, [currentUser]);
+
+  useEffect(() => {
+    if (submissionStatus === 'Form submitted successfully!') {
+      console.log('Form Data:', values);
+    }
+  }, [submissionStatus, values, navigate]);
 
   const handleChange = ({ target: { name, value } }) => {
     setValues({ ...values, [name]: value });
